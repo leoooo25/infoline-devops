@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: infoline-api
+
+server:
+  port: ${SERVER_PORT:8080}
