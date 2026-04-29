@@ -29,9 +29,9 @@ jobs:
         run: npm ci
         working-directory: frontend/angular-app
 
-      # Étape 4 : lancer les tests
+      # Étape 4 : lancer les tests (Angular 21 utilise Vitest)
       - name: Lancer les tests
-        run: npx ng test --no-watch --no-progress --browsers=ChromeHeadless
+        run: npx ng test --no-watch
         working-directory: frontend/angular-app
 
       # Étape 5 : compiler l'application
