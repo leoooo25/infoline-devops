@@ -31,8 +31,6 @@ Thumbs.db
 *.log
 logs/
 
-# Docker
-.dockerignore
 
 # Secrets — jamais en clair dans Git
 *.env
