@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infoline-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: infoline-api
+  template:
+    metadata:
+      labels:
+        app: infoline-api
+    spec:
+      containers:
+        - name: infoline-api
+          image: skalpyyyy/infoline-api:latest
+          ports:
+            - containerPort: 8080
