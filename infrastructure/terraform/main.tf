@@ -1,3 +1,4 @@
+# infrastructure/terraform/main.tf — cluster EKS + Lambda de login
 terraform {
   required_providers {
     aws = {

@@ -1,3 +1,4 @@
+# Deployment de l'API Spring Boot, image récupérée sur Docker Hub
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,5 +16,6 @@ spec:
       containers:
         - name: infoline-api
           image: skalpyyyy/infoline-api:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080

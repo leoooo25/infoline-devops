@@ -1,3 +1,4 @@
+# infrastructure/terraform/variables.tf — inputs du projet (région, nom du cluster)
 variable "aws_region" {
   description = "Région AWS"
   type        = string

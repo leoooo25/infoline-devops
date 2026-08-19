@@ -1,3 +1,4 @@
+# namespace à part pour la supervision, pour pas mélanger avec les ressources métier (infoline-api)
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -24,6 +25,7 @@ spec:
           env:
             - name: discovery.type
               value: single-node
+            # pas d'auth ici : ok pour la démo en local, jamais à faire tel quel en vraie prod
             - name: xpack.security.enabled
               value: "false"
             - name: ES_JAVA_OPTS

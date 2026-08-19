@@ -1,3 +1,4 @@
+# infrastructure/terraform/outputs.tf — nom du cluster EKS et de la fonction Lambda
 output "cluster_name" {
   value = module.eks.cluster_name
 }

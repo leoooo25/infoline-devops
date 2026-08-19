@@ -1,3 +1,4 @@
+# spring-api.yml — build/test l'API Spring Boot, push l'image, redéploie sur Minikube
 name: Spring Boot CI/CD
 
 # Se déclenche à chaque push sur la branche main
@@ -48,3 +49,13 @@ jobs:
       # Étape 7 : pousser l'image sur Docker Hub
       - name: Pousser l'image sur Docker Hub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/infoline-api:latest
+
+  deploy:
+    needs: build-test-push
+    runs-on: self-hosted
+    steps:
+      # Étape 8 : redéployer automatiquement sur le cluster juste après le push de l'image
+      - name: Redéployer sur Kubernetes
+        run: |
+          kubectl rollout restart deployment/infoline-api
+          kubectl rollout status deployment/infoline-api

@@ -1,3 +1,4 @@
+# angular-app.yml — build/test l'app Angular (juste la vitrine, pas de déploiement derrière)
 name: Angular CI
 
 # Se déclenche à chaque push sur la branche main

@@ -1,3 +1,4 @@
+# NodePort pour accéder à l'API depuis en dehors du cluster (Minikube local, pas de LoadBalancer réel)
 apiVersion: v1
 kind: Service
 metadata:
