@@ -55,7 +55,9 @@ jobs:
     runs-on: self-hosted
     steps:
       # Étape 8 : redéployer automatiquement sur le cluster juste après le push de l'image
+      # --context minikube : obligatoire, le runner tourne sur la même machine que le
+      # runner Darija qui bascule le contexte kubectl par défaut sur k3s
       - name: Redéployer sur Kubernetes
         run: |
-          kubectl rollout restart deployment/infoline-api
-          kubectl rollout status deployment/infoline-api
+          kubectl --context minikube rollout restart deployment/infoline-api
+          kubectl --context minikube rollout status deployment/infoline-api
