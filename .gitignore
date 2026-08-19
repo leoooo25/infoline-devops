@@ -36,3 +36,6 @@ logs/
 *.env
 .env*
 secrets/
+
+# Notes personnelles
+journal.md
